@@ -1,5 +1,8 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import { montserrat } from "../fonts";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import {
   ArrowBigRight,
   ClipboardCheckIcon,
@@ -15,10 +18,20 @@ import FAQCarousel from "@/components/FAQCarousel";
 import Link from "next/link";
 
 const Home = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }, []);
   return (
     <main className="w-full min-h-screen text-2xl">
       {/* Hero Section */}
-      <section className="h-screen relative overflow-hidden">
+      <section
+        className="h-screen relative overflow-hidden"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
         <img
           src="/images/landing.png"
           alt="Landing Formalitat Background"
@@ -31,8 +44,14 @@ const Home = () => {
             height={150}
             alt="Logo"
             className="rounded-full shadow-lg"
+            data-aos="fade-up"
+            data-aos-duration="300"
           />
-          <h1 className="text-4xl md:text-5xl font-bold text-[var(--secondary)] tracking-wide">
+          <h1
+            className="text-4xl md:text-5xl font-bold text-[var(--secondary)] tracking-wide"
+            data-aos="fade-up"
+            data-aos-duration="300"
+          >
             Formalitat – Formal Attire
           </h1>
           <p className="text-white max-w-xl text-lg md:text-xl italic opacity-80">
@@ -50,13 +69,15 @@ const Home = () => {
       {/* Main Content */}
       <section
         className={`${montserrat.className} xl:px-64 lg:px-22 md:px-16 sm:px-8 px-4 bg-[var(--primary)] py-8 space-y-24`}
+        data-aos="fade-up"
+        data-aos-duration="1000"
       >
         {/* Our Story */}
         <div className="flex flex-col gap-5">
           <h1 className="text-[var(--secondary)] text-6xl font-bold">
             Our Story <Pin className="inline rotate-45" size={38} />
           </h1>
-          <p className="text-white">
+          <p className="text-white" data-aos="fade-up" data-aos-duration="1000">
             Formalitat was established in Italy, Milano in 1845. Despite immense
             uncertainty and unrest during the ongoing Italian Revolution,
             Formalitat continued to see success and growth over the next decade,
@@ -81,26 +102,42 @@ const Home = () => {
               text="Female Attire"
               description="Feminine attire can range from breezy, casual dresses to glamorous looks for special occasions or events. Accessories such as jewelry, handbags, and scarves can also be added to complete the look."
               url="/images/womens-outfits.png"
+              data-aos="fade-up"
+              data-aos-duration="1000"
             />
             <ClothingCard
               text="Male Attire"
               description="Men’s clothing typically consists of pants, shirt, jacket, and shoes. For a more formal look, dress pants and a collared shirt are recommended. Additionally, casual Fridays often call for a polo shirt or a t-shirt."
               url="/images/mens-outfits.png"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-delay="1000"
             />
             <ClothingCard
               text="Collections"
               description="Seasonal collections, business collections and more! Formalitat does walk the extra mile and do what most will not do, feel free to check out our extraordinary christmas & halloween collection."
               url="/images/collections-outfits.png"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-delay="2000"
             />
           </div>
         </div>
 
         {/* Formalitat's Promise */}
         <div className="w-full mt-32">
-          <p className="text-6xl font-bold text-center text-[var(--secondary)]">
+          <p
+            className="text-6xl font-bold text-center text-[var(--secondary)]"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
             Formalitat's Promise
           </p>
-          <div className="flex justify-between gap-8 mt-24 text-white text-center">
+          <div
+            className="flex justify-between gap-8 mt-24 text-white text-center"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
             <div className="space-y-6">
               <Image
                 src="/icons/wink.png"
@@ -147,8 +184,12 @@ const Home = () => {
         </div>
 
         {/* Discord Widget */}
-        <div className="mt-32">
-          <p className="text-[var(--secondary)] text-6xl font-bold mb-2 text-center">
+        <div className="mt-32" data-aos="fade-up" data-aos-duration="1000">
+          <p
+            className="text-[var(--secondary)] text-6xl font-bold mb-2 text-center"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
             Join the community - 3k+ members!
           </p>
           <iframe
@@ -162,11 +203,19 @@ const Home = () => {
         </div>
 
         {/* Services Grid */}
-        <div className="mt-24">
-          <p className="text-6xl font-bold text-center text-[var(--secondary)] mb-16">
+        <div className="mt-24" data-aos="fade-up" data-aos-duration="1000">
+          <p
+            className="text-6xl font-bold text-center text-[var(--secondary)] mb-16"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
             We offer services for our <br /> customers & partners
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 text-white">
+          <div
+            className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 text-white"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
             {/* SSUs & Events */}
             <div className="bg-[var(--primary-dark)] p-6 rounded-2xl hover:scale-101 transition-transform duration-300">
               <h3 className="text-2xl font-bold text-[var(--secondary)] mb-2">
@@ -230,7 +279,11 @@ const Home = () => {
         </div>
 
         {/* Spotlight Section */}
-        <div className="mt-24 h-[50vh] relative">
+        <div
+          className="mt-24 h-[50vh] relative"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
           <Image
             src="/images/watch.png"
             width={500}
@@ -238,19 +291,31 @@ const Home = () => {
             alt="Watch"
             className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-0 opacity-60"
           />
-          <p className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-6xl font-bold text-center text-[var(--secondary)] z-10">
-            Explore our first-class homestore, featuring the highest quality
-            of formal attire
+          <p
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-6xl font-bold text-center text-[var(--secondary)] z-10"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
+            Explore our first-class homestore, featuring the highest quality of
+            formal attire
           </p>
         </div>
 
         {/* Customer Reviews */}
         <div className="flex flex-col gap-5 mt-48">
-          <h1 className="text-[var(--secondary)] text-6xl font-bold">
+          <h1
+            className="text-[var(--secondary)] text-6xl font-bold"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
             Customer Reviews <Pin className="inline rotate-45" size={38} />
           </h1>
           <div className="w-full h-[2px] bg-[var(--secondary)]" />
-          <div className="flex w-full justify-between gap-5">
+          <div
+            className="flex w-full justify-between gap-5"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+          >
             <ReviewCard
               text="MysteryMouthwash"
               description="“Amazing homestore that offers help and support from the employees and staff. I am amazed by the quality of the homestore and clothing.”"
@@ -263,26 +328,30 @@ const Home = () => {
             />
             <ReviewCard
               text="DreamNowThen"
-              description="“Formalitat has truly exceeded my expectations. I highly recommend their services to anyone looking for a reliable and stylish formal attire experience!”"  
+              description="“Formalitat has truly exceeded my expectations. I highly recommend their services to anyone looking for a reliable and stylish formal attire experience!”"
               url="/images/review3.png"
             />
           </div>
         </div>
 
         {/* FAQ */}
-        <div className="flex flex-col gap-5 mt-48">
+        <div
+          className="flex flex-col gap-5 mt-48"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
           <h1 className="text-[var(--secondary)] text-6xl font-bold">FAQ</h1>
           <p className="text-gray-400">
             Frequently asked questions by our customers{" "}
             <FunctionSquare size={24} className="inline" />
           </p>
           <div className="w-full h-[2px] bg-[var(--secondary)]" />
-          <FAQCarousel />
+          <FAQCarousel data-aos="fade-up" data-aos-duration="1000" />
         </div>
       </section>
 
       {/* Call‑to‑Action Overlay Section */}
-      <div className="relative">
+      <div className="relative" data-aos="fade-up" data-aos-duration="1000">
         <Image
           src="/images/footer-bg.png"
           width={980}
@@ -314,13 +383,22 @@ const Home = () => {
       </div>
 
       {/* Footer */}
-      <div className="-mt-32 flex justify-center items-center h-[50vh] bg-[var(--primary)]">
+      <div
+        className="-mt-32 flex justify-center items-center h-[50vh] bg-[var(--primary)]"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+      >
         <footer className="w-full text-center">
           <p className="text-5xl text-[var(--secondary)] font-bold">
             Demo website created by #s1ddiq on discord contact to see full
             version.
           </p>
-          <Link href='https://s1ddiqs-room.vercel.app/' className='underline text-blue-500 text-3xl'>My Portfolio</Link>
+          <Link
+            href="https://s1ddiqs-room.vercel.app/"
+            className="underline text-blue-500 text-3xl"
+          >
+            My Portfolio
+          </Link>
         </footer>
       </div>
     </main>
